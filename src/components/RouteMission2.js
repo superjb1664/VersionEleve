@@ -11,6 +11,7 @@ import Accueil from "../pages/Accueil"
 
 import BarreDeNavigation from "./BarreDeNavigation";
 import ListeAtelier from "./ListeAtelier";
+import ListeBoisson from "./ListeBoisson";
 
 const RouteMission2 = props => {
         return (
@@ -19,6 +20,10 @@ const RouteMission2 = props => {
             <Switch>
                 <Route path="/about">
                     <About />
+                </Route>
+
+                <Route path="/boisson">
+                    <ListeBoisson />
                 </Route>
 
                 <Route path="/atelier">
