@@ -12,12 +12,34 @@ import Accueil from "../pages/Accueil"
 import BarreDeNavigation from "./BarreDeNavigation";
 import ListeAtelier from "./ListeAtelier";
 import ListeBoisson from "./ListeBoisson";
+import Atelier from "./Atelier";
+import Boisson from "./Boisson";
+import Connexion from "./Connexion";
+import Deconnexion from "./Deconnexion";
+import MesInfos from "./MesInfos";
+import React from "react";
 
 const RouteMission2 = props => {
         return (
         <BrowserRouter>
-            <BarreDeNavigation />
+            <BarreDeNavigation login={props.login}/>
             <Switch>
+                <Route path="/connexion" >
+                    <Connexion gereChangementSession={props.gereChangementSession} />
+                </Route>
+
+                <Route path="/deconnexion">
+                    <Deconnexion gereChangementSession={props.gereChangementSession} />
+                </Route>
+                <Route path="/mesinfos" >
+                    <MesInfos />
+                </Route>
+                <Route path="/atelier/:id" >
+                    <Atelier login={props.login} />
+                </Route>
+                <Route path="/boisson/:id" >
+                    <Boisson />
+                </Route>
                 <Route path="/about">
                     <About />
                 </Route>
@@ -29,6 +51,7 @@ const RouteMission2 = props => {
                 <Route path="/atelier">
                     <ListeAtelier />
                 </Route>
+
 
                 <Route path="/">
                     <Accueil />

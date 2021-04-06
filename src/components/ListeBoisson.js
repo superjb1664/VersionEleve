@@ -1,7 +1,6 @@
 // ./components/ListeAtelier.js
 import React, { useState, useEffect } from "react"
 
-import DetailAtelier from "./DetailAtelier";
 import axios from "./AxiosInterceptor";
 import DetailBoisson from "./DetailBoisson";
 
@@ -11,7 +10,7 @@ const ListeBoisson = props => {
 
     useEffect(() => {
         const fetchData = async () => {
-            await axios.get('api/boisson'  )
+            await axios.get('api/boissons'  )
                 .then((response) => {
                     console.log(response )
                     setBoissons(response.data)
@@ -45,8 +44,8 @@ const ListeBoisson = props => {
             <h1>Nos boissons</h1>
             En choississant la bonne boisson adaptée à vos efforts, vous progresserez encore plus vite !
             <ul  >
-                {boissons.map(boisson => (
-                    <DetailBoisson key={boisson.id} atelier={boisson}/>
+                {boissons.map(boissonAct => (
+                    <DetailBoisson key={boissonAct.id} boisson={boissonAct}/>
                 ))}
             </ul>
         </div>

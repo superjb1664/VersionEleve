@@ -43,8 +43,8 @@ const ListeAtelier = props => {
         <div className="container">
             <h1>Nos ateliers</h1>
             <ul  >
-                {ateliers.map(atelier => (
-                    <DetailAtelier key={atelier.id} atelier={atelier}/>
+                {ateliers.map(atelierAct => (
+                    <DetailAtelier key={atelierAct.id} atelier={atelierAct}/>
                 ))}
             </ul>
         </div>
