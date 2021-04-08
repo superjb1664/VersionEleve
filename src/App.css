@@ -25,3 +25,11 @@ body {
     max-width: 600px;
     margin: 0 auto;
 }
+
+.interactivediv {
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}

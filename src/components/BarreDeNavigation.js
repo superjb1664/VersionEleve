@@ -11,6 +11,7 @@ const BarreDeNavigation = props => {
     else
         nav = <>
             <Navbar.Brand as={Link} to="/mesinfos" >Mes informations</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/messeances" >Mes séances</Navbar.Brand>
             <Navbar.Brand as={Link} to="/deconnexion">Déconnexion</Navbar.Brand>
             <Navbar.Text>Connecté : {props.login}</Navbar.Text>
         </>

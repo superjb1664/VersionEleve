@@ -1,7 +1,7 @@
-// ./component/DetailAtelier.js
+// ./component/ItemAtelier.js
 import {Link} from 'react-router-dom'
 
-const DetailAtelier = (props) => { //ici, props contient toutes les propriétés qui ont été envoyées à la création de ce composant. "props" a un attribut "atelier" donné par la page appelante : atelier={atelierAct}
+const ItemAtelier = (props) => { //ici, props contient toutes les propriétés qui ont été envoyées à la création de ce composant. "props" a un attribut "atelier" donné par la page appelante : atelier={atelierAct}
         return (
             <li >
                 <Link to={`/atelier/${props.atelier.id}`}>
@@ -10,4 +10,4 @@ const DetailAtelier = (props) => { //ici, props contient toutes les propriétés
             </li>
        )
 }
-export default DetailAtelier
+export default ItemAtelier

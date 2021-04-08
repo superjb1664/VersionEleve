@@ -10,14 +10,17 @@ import NotMatch from "../pages/NotMatch"
 import Accueil from "../pages/Accueil"
 
 import BarreDeNavigation from "./BarreDeNavigation";
-import ListeAtelier from "./ListeAtelier";
-import ListeBoisson from "./ListeBoisson";
+import ListeAtelier from "./listes/ListeAtelier";
+import ListeBoisson from "./listes/ListeBoisson";
 import Atelier from "./Atelier";
 import Boisson from "./Boisson";
 import Connexion from "./Connexion";
 import Deconnexion from "./Deconnexion";
 import MesInfos from "./MesInfos";
 import React from "react";
+import Seances from "./Seances";
+import Sequence from "./Sequence";
+import CreerSequence from "./CreerSequence";
 
 const RouteMission2 = props => {
         return (
@@ -27,6 +30,13 @@ const RouteMission2 = props => {
                 <Route path="/connexion" >
                     <Connexion gereChangementSession={props.gereChangementSession} />
                 </Route>
+                <Route path="/messeances" >
+                    <Seances   />
+                </Route>
+                <Route path="/creerseance">
+                    <CreerSequence />
+                </Route>
+
 
                 <Route path="/deconnexion">
                     <Deconnexion gereChangementSession={props.gereChangementSession} />
@@ -40,6 +50,13 @@ const RouteMission2 = props => {
                 <Route path="/boisson/:id" >
                     <Boisson />
                 </Route>
+                <Route path="/detailsequenceperso/:id" >
+                    <Sequence />
+                </Route>
+                <Route path="/detailsequencetype/:id" >
+                    <Sequence />
+                </Route>
+
                 <Route path="/about">
                     <About />
                 </Route>

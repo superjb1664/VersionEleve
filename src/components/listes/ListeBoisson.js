@@ -1,19 +1,19 @@
 // ./components/ListeAtelier.js
 import React, { useState, useEffect } from "react"
 
-import DetailAtelier from "./DetailAtelier";
-import axios from "./AxiosInterceptor";
+import axios from "../AxiosInterceptor";
+import ItemBoisson from "../items/ItemBoisson";
 
 
-const ListeAtelier = props => {
-    const [ateliers, setAteliers] = useState([]) //mémorise les ateliers après leur chargement
+const ListeBoisson = props => {
+    const [boissons, setBoissons] = useState([]) //mémorise les ateliers après leur chargement
 
     useEffect(() => {
         const fetchData = async () => {
-            await axios.get('api/ateliers'  )
+            await axios.get('api/boissons'  )
                 .then((response) => {
                     console.log(response )
-                    setAteliers(response.data)
+                    setBoissons(response.data)
                 }, (error) => {
                     console.log(error)
                 });
@@ -41,13 +41,14 @@ const ListeAtelier = props => {
 
     return (
         <div className="container">
-            <h1>Nos ateliers</h1>
+            <h1>Nos boissons</h1>
+            En choississant la bonne boisson adaptée à vos efforts, vous progresserez encore plus vite !
             <ul  >
-                {ateliers.map(atelierAct => (
-                    <DetailAtelier key={atelierAct.id} atelier={atelierAct}/>
+                {boissons.map(boissonAct => (
+                    <ItemBoisson key={boissonAct.id} boisson={boissonAct}/>
                 ))}
             </ul>
         </div>
     )
 }
-export default ListeAtelier
+export default ListeBoisson

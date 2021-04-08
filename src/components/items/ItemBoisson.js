@@ -1,7 +1,7 @@
-// ./component/DetailAtelier.js
+// ./component/ItemAtelier.js
 import {Link} from 'react-router-dom'
 
-const DetailBoisson = ({boisson}) => {
+const ItemBoisson = ({boisson}) => {
         return (
             <li >
                 <Link to={`/boisson/${boisson.id}`}>
@@ -10,4 +10,4 @@ const DetailBoisson = ({boisson}) => {
             </li>
        )
 }
-export default DetailBoisson
+export default ItemBoisson
